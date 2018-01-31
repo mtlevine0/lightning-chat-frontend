@@ -1,0 +1,21 @@
+<div class="card">
+  <div class="card-body">
+    <div class="form-group">
+      <textarea 
+        #message 
+        class="form-control" 
+        id="exampleFormControlTextarea1" 
+        rows="3"
+        (keyup.enter)="addMessage(message.value)"
+      >
+      </textarea>
+      <br>
+      <button 
+        class="btn btn-primary float-right"
+        (click)="addMessage(message.value)"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</div>

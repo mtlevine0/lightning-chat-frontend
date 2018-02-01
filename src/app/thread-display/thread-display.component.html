@@ -1,9 +1,11 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">{{ selectedThread.name }}</h5>
-    <ul class="list-group">
-      <li class="list-group-item" *ngFor="let message of selectedThread.messages">
-        {{ message.user.username }} - {{ message.message }}
+    <ul class="list-group display-box" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+      <li class="list-group-item"  *ngFor="let message of selectedThread.messages">
+        <div [ngClass]="{'float-right': user.username == message.user.username}">
+            {{ message.user.username }} - {{ message.message }}
+        </div>
       </li>
     </ul>
   </div>

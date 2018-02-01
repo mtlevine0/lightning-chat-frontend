@@ -1,21 +1,16 @@
 <div class="card">
   <div class="card-body">
-    <div class="form-group">
-      <textarea 
-        #message 
-        class="form-control" 
-        id="exampleFormControlTextarea1" 
-        rows="3"
-        (keyup.enter)="addMessage(message.value)"
-      >
-      </textarea>
-      <br>
-      <button 
-        class="btn btn-primary float-right"
-        (click)="addMessage(message.value)"
-      >
-        Submit
-      </button>
-    </div>
+    <form (submit)="addMessage(textbox.value); textValue=''">
+      <div class="form-group">
+        <label for="message">Message</label>
+        <input
+          type="text"
+          name="message"
+          #textbox
+          class="form-control" 
+          [(ngModel)]="textValue"
+        />
+      </div>
+    </form>
   </div>
 </div>
